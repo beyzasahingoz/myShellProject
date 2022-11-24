@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 
 int main(int argc, char * argv[]){
- 
+    //the command is executed whichever argv equals that string
     int f,j;
     if(strcmp(argv[3], "clear") == 0){
         printf("\033[H\033[J"); 
@@ -25,6 +25,7 @@ int main(int argc, char * argv[]){
         exit(0);
     } else if(strcmp(argv[3], "writef") == 0){
         for(int i = 0; i < atoi(argv[2]); i++){
+            //the fork runs until the number entered
             f=fork();
             if(f==0){
                 j= execve("writef", argv,NULL);
@@ -35,6 +36,7 @@ int main(int argc, char * argv[]){
             }
         }
     } else {
+        //if the input is not equal to any command, the input is written
         for(int i = 0; i < atoi(argv[2]); i++){
             printf("%s\n", argv[3]);
         }
