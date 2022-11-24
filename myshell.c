@@ -6,17 +6,17 @@ void userCommand(char *inp[]);
 
 int main(int argc, char *argv[],char ** arg){
 while(1){
-	//input,temp ve inp dizileri için bellekten yer ayrımı yapıldı.
+	//allocated memory for input,temp and inp arrays.
 	char *userInput = (char*) malloc((100) * sizeof(char *));
 	char *temp = (char*) malloc((100) * sizeof(char *));
 	char **input = ((char **) malloc (100*sizeof(char**)));
-	//Değişken tanımlamaları yapıldı ve kullanıcıdan input alındı.
+	//defined variable and receipt input from user.
 	int m=0, size=0; 
 		printf("myshell>>");
 		gets(userInput,100,stdin); 
-		//alınan input strtok methodu ile boşluklarına göre bölündü.
+		//the input received was divided according to its spaces with the strtok method.
 		temp =strtok(userInput, " ");
-		//temp değerinin null olup olmadığı kontrol edildi ve değilse inp matrisine atandı.
+		//checked if the temp value is null and if not it is assigned to the inp matrix.
  		while (temp != NULL) { 
     			input[m]=temp;
         		temp = strtok(NULL," "); 
@@ -24,13 +24,13 @@ while(1){
 			size++; 
     		}
     		input[size]=NULL; 
-		//kullanıcıdan alınan inputun boyutu 5ten küçükse inp matrisi parametre olarak command methoduna atandı.
+		//if the input size from the user is less than 5, the inp matrix is assigned to the command method as a parameter.
 			userCommand(input); 
-	//kullanıcıdan input alınırken dizi temizlendi.
+	//array is cleared while receiving input from the user.
 	free(userInput);
    }
 }
-//kullanıcının girdiği komutlara göre gereken işlemler gerçekleştirilir.
+//operations are performed according to the commands entered by the user.
 void userCommand(char *input[]){
 	if(strcmp(input[0],"exit")==0){
 		exit(0);
