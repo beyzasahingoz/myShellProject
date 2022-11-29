@@ -1,7 +1,7 @@
 # myShellProject
 ### ***Basic Shell Project*** ###
 ✨ Shell Commands ✨
-- Cat : prints the user's input
+- Cat : prints to the file user's input
 - Ls : fetches the files contained in the folder
 - Clear : cleans the shell
 - Exit : makes an exit
