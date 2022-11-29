@@ -13,10 +13,6 @@ int main(int argc, char * argv[]){
         for(int i = 0; i < atoi(argv[2]); i++){
             system("/bin/ls");
         }
-    } else if(strcmp(argv[3], "cat") == 0 && argc>=5){
-        for(int i = 0; i < atoi(argv[2]); i++){
-            printf("cat:%s\n", argv[4]);
-        }
     } else if(strcmp(argv[3], "bash") == 0 && argc==4){
         for(int i = 0; i < atoi(argv[2]); i++){
             system("/bin/bash");
