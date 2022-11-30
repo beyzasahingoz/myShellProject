@@ -26,10 +26,6 @@ int main(int argc, char *argv[])
             system("/bin/bash");
         }
     }
-    else if (strcmp(argv[3], "exit") == 0)
-    {
-        exit(0);
-    }
     else if (strcmp(argv[3], "writef") == 0 && !strcmp(argv[4], "-f") && argv[5] != NULL && argc == 6)
     {
         for (int i = 0; i < atoi(argv[2]); i++)
